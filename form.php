@@ -1,4 +1,7 @@
+<html>
+<title>Sample form for airtime purchase</title>
 
+<head>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -9,6 +12,14 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+
+</head>
+
+
+
+<body>
+<div class="panel panel-default">
+    <div class="panel-body">
 <form class="form-horizontal">
     <fieldset>
 
@@ -43,3 +54,8 @@
 
     </fieldset>
 </form>
+        </div>
+    </div>
+
+</body>
+</html>
