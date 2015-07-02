@@ -1,8 +1,8 @@
 <?php
 
-//ini_set('display_startup_errors',1);
-//ini_set('display_errors',1);
-//error_reporting(-1);
+ini_set('display_startup_errors',1);
+ini_set('display_errors',1);
+error_reporting(-1);
 
 require_once('connect.php');
 
@@ -15,38 +15,18 @@ $amount=$_POST['amount'];
 $phone = '+254'.substr($phone,-9);
 
 //appending KES to the amount
-$amount='KES '.$amount;
+//$amount='KES '.$amount;
 
 /*check whether the user exists, if the user exits get the user_id, if not create the user
 and get the user id */
 $user_id = createUser($phone);
 
-print_r($user_id);
-exit;
-
-
 //we need to store the order of the airtime
 //create order
 
-
-//wait for the user to make payments
-
-//top up the users account
-
-//from the users account, remove amount equal to the airtime ordered
-
-///send airtime
+print_r(createOrder($user_id,$amount));
 
 
-//nouns orders, users, account, airtime,
-
-//verbs top up, store, make payments, send airtime
-
-//users - phone, balance,
-
-//order - user_id, amount, status
-
-//transaction_log
 
 
 //building the recipients array
