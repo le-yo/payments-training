@@ -1,5 +1,9 @@
 <?php
 
+//ini_set('display_startup_errors',1);
+//ini_set('display_errors',1);
+//error_reporting(-1);
+
 require_once('connect.php');
 
 //recieve the phone number
@@ -15,7 +19,10 @@ $amount='KES '.$amount;
 
 /*check whether the user exists, if the user exits get the user_id, if not create the user
 and get the user id */
+$user_id = createUser($phone);
 
+print_r($user_id);
+exit;
 
 
 //we need to store the order of the airtime
@@ -58,7 +65,7 @@ sendAirtime($recipients);
 function createUser($phone)
 {
     //check if the user exists
-    $query = mysql_query("SELECT phone FROM users WHERE phone='$phone'");
+    $query = mysql_query("SELECT id,phone FROM users WHERE phone='$phone'");
     if (mysql_num_rows($query) > 0) {
         $row = mysql_fetch_array($query);
         $id = $row['id'];
@@ -68,7 +75,7 @@ function createUser($phone)
         $result = mysql_query("INSERT INTO users (phone) VALUES ('$phone')");
 
         if ($result) {
-            $query = mysql_query("SELECT phone FROM users WHERE phone='$phone'");
+            $query = mysql_query("SELECT id,phone FROM users WHERE phone='$phone'");
             $row = mysql_fetch_array($query);
             $id = $row['id'];
             return $id;
