@@ -24,7 +24,7 @@ $user_id = createUser($phone);
 //we need to store the order of the airtime
 //create order
 
-print_r(createOrder($user_id,$amount));
+createOrder($user_id,$amount);
 
 
 
