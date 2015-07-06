@@ -7,9 +7,10 @@ error_reporting(-1);
 //include your connection. This is where we start.
 require_once('connect.php');
 
-//$details = json_decode($_REQUEST);
+$details = json_decode($_REQUEST);
 
-$details = json_decode('{"type":"21","receipt":"JG30NO3O2Y","time":"1435934580","phonenumber":"0728355429","name":"LEONARD KORIR","account":"","amount":"1000","postbalance":"50900","transactioncost":"0","note":"","secret":"12345"}');
+//test JSON
+//$details = json_decode('{"type":"21","receipt":"JG30NO3O2Y","time":"1435934580","phonenumber":"0728355429","name":"LEONARD KORIR","account":"","amount":"1000","postbalance":"50900","transactioncost":"0","note":"","secret":"12345"}'); 
 
 // print_r($details);
 // exit;
@@ -20,7 +21,7 @@ $phone = $details->phonenumber;
 $amount = substr($details->amount, 0, -2);
 
 //This was a test to get the JSON Data
-//$result =  mysql_query("INSERT INTO post_details (details) VALUES ('$details')");
+$result =  mysql_query("INSERT INTO post_details (details) VALUES ('$details')");
 
 //get the use with this phone number
 $phone = '+254'.substr($phone,-9);
@@ -39,7 +40,12 @@ updateUserBalance($user['id'], $new_balance);
 
 //get the latest order by the current user and compare with the amount sent
 
-$latest_order_amount = getOrder($user['id']);
+$order = getOrder($user['id']);
+
+
+$latest_order_amount = $order['amount_ordered'];
+
+
 
 //check if the user new balance is greater than the ordered airtime
 
@@ -63,8 +69,9 @@ if($new_balance + 1 > $latest_order_amount){
 // and update user balance
     updateUserBalance($user['id'], $balance);
 
-
-
+    updateOrderStatus($order['id']);
+    echo "your airtime is on its way";
+    exit;
 
 }else{
     //send SMS telling the user that he doesn't have sufficient money for the order
@@ -93,13 +100,19 @@ if($new_balance + 1 > $latest_order_amount){
 //order - user_id, amount, status
 
 //transaction_log
+
+//update order status
+function updateOrderStatus($order_id){
+    return mysql_query("UPDATE airtime_orders SET status=1 WHERE id='$order_id'");
+}
+
 function getOrder($user_id){
     // print_r($user_id);
     // exit;
-    $query = mysql_query("SELECT amount_ordered FROM airtime_orders WHERE user_id='$user_id' AND status=0 ORDER BY id DESC LIMIT 1");
+    $query = mysql_query("SELECT id,amount_ordered FROM airtime_orders WHERE user_id='$user_id' AND status=0 ORDER BY id DESC LIMIT 1");
     if (mysql_num_rows($query) > 0) {
         $row = mysql_fetch_array($query);
-        return $row['amount_ordered'];
+        return $row;
     }else{
         return 0;
     }
@@ -136,7 +149,7 @@ function sendAirtime($recipients){
 
     //Specify your credentials
     $username = "lenykoskey";
-    $apiKey   = "abbfa09e621a6ece272a254e3fcd910657ff46e88f82db205499603d06dda908";
+    $apiKey   = "";
 
     $recipientStringFormat = json_encode($recipients);
 
@@ -154,7 +167,7 @@ function sendAirtime($recipients){
             echo $result->requestId;
 
             //Error message is important when the status is not Success
-            echo $esult->errorMessage;
+            echo $result->errorMessage;
         }
     }
     catch(AfricasTalkingGatewayException $e){
@@ -167,7 +180,7 @@ function sendSMS($recipient, $message){
 
 // Specify your login credentials
     $username   = "lenykoskey";
-    $apikey     = "abbfa09e621a6ece272a254e3fcd910657ff46e88f82db205499603d06dda908";
+    $apikey     = "";
 
     $recipients = $recipient;
 
