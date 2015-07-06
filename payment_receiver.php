@@ -43,7 +43,7 @@ $latest_order_amount = getOrder($user['id']);
 
 //check if the user new balance is greater than the ordered airtime
 
-if($new_balance > $latest_order_amount){
+if($new_balance + 1 > $latest_order_amount){
     //send airtime
     //building the recipients array
     $recipients = array();
@@ -135,8 +135,8 @@ function sendAirtime($recipients){
     require_once "AfricasTalkingGateway.php";
 
     //Specify your credentials
-    $username = "username";
-    $apiKey   = "apikey";
+    $username = "lenykoskey";
+    $apiKey   = "abbfa09e621a6ece272a254e3fcd910657ff46e88f82db205499603d06dda908";
 
     $recipientStringFormat = json_encode($recipients);
 
@@ -166,8 +166,8 @@ function sendSMS($recipient, $message){
     require_once('AfricasTalkingGateway.php');
 
 // Specify your login credentials
-    $username   = "username";
-    $apikey     = "apikey";
+    $username   = "lenykoskey";
+    $apikey     = "abbfa09e621a6ece272a254e3fcd910657ff46e88f82db205499603d06dda908";
 
     $recipients = $recipient;
 
