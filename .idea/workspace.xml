@@ -80,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payment_receiver.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="payment_receiver.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/payment_receiver.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34354487" vertical-offset="2108" max-vertical-offset="3255">
-              <caret line="151" column="17" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+            <state vertical-scroll-proportion="-14.041667" vertical-offset="2798" max-vertical-offset="3255">
+              <caret line="209" column="1" selection-start-line="209" selection-start-column="1" selection-end-line="209" selection-end-column="1" />
               <folding>
                 <marker date="1436199130000" expanded="true" signature="806:860" placeholder="INSERT INTO ..." />
                 <marker date="1436199130000" expanded="true" signature="2636:2691" placeholder="UPDATE airti..." />
@@ -94,6 +94,16 @@
                 <marker date="1436199130000" expanded="true" signature="3463:3518" placeholder="SELECT id,ph..users..." />
                 <marker date="1436199130000" expanded="true" signature="3683:3743" placeholder="UPDATE users..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sendmoney.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sendmoney.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.3129103" vertical-offset="0" max-vertical-offset="810">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,6 +139,7 @@
         <option value="$PROJECT_DIR$/connect.php" />
         <option value="$PROJECT_DIR$/process.php" />
         <option value="$PROJECT_DIR$/payment_receiver.php" />
+        <option value="$PROJECT_DIR$/sendmoney.php" />
       </list>
     </option>
   </component>
@@ -665,8 +676,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/payment_receiver.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34354487" vertical-offset="2108" max-vertical-offset="3255">
-          <caret line="151" column="17" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+        <state vertical-scroll-proportion="-14.041667" vertical-offset="2798" max-vertical-offset="3255">
+          <caret line="209" column="1" selection-start-line="209" selection-start-column="1" selection-end-line="209" selection-end-column="1" />
           <folding>
             <marker date="1436199130000" expanded="true" signature="806:860" placeholder="INSERT INTO ..." />
             <marker date="1436199130000" expanded="true" signature="2636:2691" placeholder="UPDATE airti..." />
@@ -676,6 +687,14 @@
             <marker date="1436199130000" expanded="true" signature="3463:3518" placeholder="SELECT id,ph..users..." />
             <marker date="1436199130000" expanded="true" signature="3683:3743" placeholder="UPDATE users..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sendmoney.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3129103" vertical-offset="0" max-vertical-offset="810">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
