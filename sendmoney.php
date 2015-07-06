@@ -1,5 +1,16 @@
 <?php
 
+//call the sendMoney function
+
+$phone = '0728355429';
+
+$amount = 20;
+
+$response = sendmoney($phone,$amount);
+
+print_r($response);
+exit;
+
 
 
 //sending money using lipisha
@@ -10,7 +21,7 @@ function sendmoney($mobile_no,$amount){
 
     $api_key = "";
 
-    $account_no = "02394";
+    $account_no = "";
 
     $mobile_no = $mobile_no;
 
