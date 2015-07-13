@@ -10,7 +10,7 @@ require_once('connect.php');
 $details = json_decode($_REQUEST);
 
 //test JSON
-//$details = json_decode('{"type":"21","receipt":"JG30NO3O2Y","time":"1435934580","phonenumber":"0728355429","name":"LEONARD KORIR","account":"","amount":"1000","postbalance":"50900","transactioncost":"0","note":"","secret":"12345"}'); 
+//$details = json_decode('{"type":"21","receipt":"JG30NO3O2Y","time":"1435934580","phonenumber":"0728355429","name":"LEONARD KORIR","account":"","amount":"1000","postbalance":"50900","transactioncost":"0","note":"","secret":"12345"}');
 
 // print_r($details);
 // exit;
@@ -148,8 +148,8 @@ function sendAirtime($recipients){
     require_once "AfricasTalkingGateway.php";
 
     //Specify your credentials
-    $username = "lenykoskey";
-    $apiKey   = "";
+    $username = "YourUsername";
+    $apiKey   = "YourAPIKey";
 
     $recipientStringFormat = json_encode($recipients);
 
